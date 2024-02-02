@@ -5,15 +5,25 @@ while(!maximum){
 }
 
 const targetNum = Math.floor(Math.random()*maximum)+1;
-console.log(targetNum);
-let guess = parseInt(prompt('1つに数字を決めました。数字を当ててみてください'));
 
-while(guess != targetNum){
+
+let guess = prompt('1つに数字を決めました。数字を当ててみてください');
+let count=1;
+
+while(parseInt(guess) != targetNum){
+    count ++;
+
+    if(guess==="q")break;
+
     if (guess > targetNum){
-        guess = parseInt(prompt('その数字より小さいです！もう一度当ててみてください：'));
+        guess = prompt('その数字より小さいです！もう一度当ててみてください：');
     }else{
-        guess = parseInt(prompt('その数字より大きいです！もう一度当ててみてください：'));
+        guess = prompt('その数字より大きいです！もう一度当ててみてください：');
     }
 }
 
-console.log("正解！");
+if(guess === "q"){
+    console.log("終了します")
+}else{
+    console.log(`正解！${count}回で当てることができました`);
+}
