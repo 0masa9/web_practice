@@ -1,0 +1,8 @@
+.player {
+    display: inline-block;
+    text-align: center;
+}
+
+.player img{
+    display: block;
+}
